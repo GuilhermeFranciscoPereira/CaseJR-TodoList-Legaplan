@@ -1,0 +1,100 @@
+@mixin maxWidth900px {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin maxWidth480px {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 92.11vw;
+    margin: 36px auto auto auto;
+    width: Hug (1,328px)px;
+    padding: 0px 0px 24px 0px;
+    gap: 8px;
+    border-bottom: 1px solid #D7DDE9;
+
+
+    div.logoDiv {
+        display: flex;
+
+        h1 {
+            margin-left: 7.6px;
+            color: #101828;
+        }
+    }
+
+    div.userNameDiv {
+        h2 {
+            color: #000000;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29.04px;
+            letter-spacing: -0.02em;
+            text-align: left;
+        }
+    }
+
+    div.setDayDiv {
+        p {
+            color: #0000008A;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19.36px;
+            letter-spacing: -0.02em;
+            text-align: left;
+        }
+    }
+
+    @include maxWidth900px {
+        width: 98vw;
+
+        div.userNameDiv {
+            h2 {
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+
+        div.setDayDiv {
+            p {
+                text-align: right;
+            }
+        }
+    }
+
+    @include maxWidth480px {
+        width: 85vw;
+        height: 114px;
+        margin: 24px 24px 48px 24px;
+        flex-direction: column;
+        align-items: start;
+
+        div.userNameDiv {
+            h2 {
+                font-size: 16px;
+                line-height: 19.36px;
+                letter-spacing: -0.02em;
+                text-align: left;
+            }
+        }
+
+        div.setDayDiv {
+            p {
+                color: #0000008A;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19.36px;
+                letter-spacing: -0.02em;
+                text-align: left;
+            }
+        }
+    }
+}
