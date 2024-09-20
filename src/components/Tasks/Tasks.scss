@@ -121,6 +121,12 @@ main.tasksMain {
             h3 { margin-top: 24px; }
         }
     }
+    
+    button {
+        width: 450px;
+        height: 51px;
+        margin-top: 24px;
+    }
 
     @include maxWidth480px {
         section.tasksSection {
@@ -130,6 +136,12 @@ main.tasksMain {
             div.tasksToDo, div.tasksDone {
                 gap: 8px;
             }
+        }
+
+        button {
+            width: 272px;
+            height: 51px;
+            margin-top: 24px;
         }
     }
 }

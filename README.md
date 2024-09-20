@@ -1,22 +1,22 @@
 # 📝 Case Dev Junior - TodoList - Legaplan 📝
 
-> Commit: 20/09/2024 - 14:57 ( Commit de criação do componente Tasks - Responsável por renderizar todos as tarefas )
+> Commit: 20/09/2024 - 15:53 ( Commit de criação do componente de botão que será reutilizado pelo código )
 
 #
 
-## 💭 Seção de tarefas objetivo x criado (PC):
-- ### Seção de tarefas objetivo:
-!['Foto da Seção de tarefas do objetivo - PC'](/src/assets/taskSectionObjective-PC.png)
+## 💭 Botão do objetivo x criado (PC):
+- ### Botão do objetivo:
+!['Foto do botão do objetivo - PC'](/src/assets/taskSectionObjective-PC.png)
 
 - ### Seção de tarefas criado:
-!['Foto da minha Seção de tarefas - PC'](/src/assets/taskSectionPersonal-PC.png)
+!['Foto do meu botão - PC'](/src/assets/taskSectionPersonal-PC.png)
 
-## 💭 Seção de tarefas objetivo x criado (Mobile):
-- ### Seção de tarefas objetivo:
-!['Foto da Seção de tarefas do objetivo - Mobile'](/src/assets/taskSectionObjective-Mobile.png)
+## 💭 Botão do objetivo x criado (Mobile):
+- ### Botão do objetivo:
+!['Foto do botão do objetivo - Mobile'](/src/assets/taskSectionObjective-Mobile.png)
 
 - ### Seção de tarefas criado:
-!['Foto da minha Seção de tarefas - Mobile'](/src/assets/taskSectionPersonal-Mobile.png)
+!['Foto do meu botão - Mobile'](/src/assets/taskSectionPersonal-Mobile.png)
 
 ##
 
@@ -29,16 +29,15 @@ Este projeto é um desafio proposto pela equipe da LegaPlan para uma vaga de dev
 
 ## Alterações na pasta: ( src )
 
-## Alterações nas pastas de ( src ): ( app / assets / components )
-
-### app:
-- app > page.tsx: Importado e adicionado o componente "Tasks" (Responsável por renderizar na tela todas as tarefas).
+## Alterações nas pastas de ( src ): ( assets / components )
 
 ### assets:
-- assets: Adicionado as 4 fotos usadas neste readme e também adicionado a foto da lixeira que se encontra em cada tarefa no canto direito.
+- assets: Adicionado as 4 fotos usadas neste readme para mostrar como o site está no momento atual.
 
 ### components:
-- components > Header: Criado a pasta "Tasks" para guardar a estrutura da seção de tarefas, e também criada a estilização em Scss. 
+- components > Buttons: Criado a pasta "Buttons" para guardar o botão que vai ser reutilizado no site.
+- components > Buttons > PrimaryButton: Criado a estrutura do botão para ser reutilizado no código, além da sua estilização padrão com scss.
+- components > Tasks: Adicionado o botão "Adicionar nova tarefa" a baixo do componente das tarefas e também adicionado a estilização particular deste botão no scss, como a largura, a altura e o margin-top.
 
 ##
 

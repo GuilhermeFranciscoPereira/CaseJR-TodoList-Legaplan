@@ -1,6 +1,7 @@
-import Image from 'next/image'
-import Trash from '../../assets/trash.png'
-import './Tasks.scss'
+import Image from 'next/image';
+import Trash from '../../assets/trash.png';
+import PrimaryButton from '../Buttons/PrimaryButton';
+import './Tasks.scss';
 
 export default function Tasks(): JSX.Element {
     return (
@@ -46,6 +47,7 @@ export default function Tasks(): JSX.Element {
                     </div>
                 </div>
             </section>
+            <PrimaryButton firstColor='#0796D3 0%' secondColor='#53C0F0 68.65%'>Adicionar nova tarefa</PrimaryButton>
         </main>
         </>
     )
