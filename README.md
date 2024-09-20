@@ -1,29 +1,24 @@
 # 📝 Case Dev Junior - TodoList - Legaplan 📝
 
-> Commit: 19/09/2024 - 23:42 ( Commit de criação do componente Header )
+> Commit: 20/09/2024 - 14:57 ( Commit de criação do componente Tasks - Responsável por renderizar todos as tarefas )
 
 #
 
-## 💭 Header objetivo x Header criado (PC):
-- ### Header objetivo:
-!['Foto do Header do objetivo - PC'](/src/assets/headerObjetivo-PC.png)
+## 💭 Seção de tarefas objetivo x criado (PC):
+- ### Seção de tarefas objetivo:
+!['Foto da Seção de tarefas do objetivo - PC'](/src/assets/taskSectionObjective-PC.png)
 
-- ### Header criado:
-!['Foto do meu Header - PC'](/src/assets/headerPessoal-PC.png)
+- ### Seção de tarefas criado:
+!['Foto da minha Seção de tarefas - PC'](/src/assets/taskSectionPersonal-PC.png)
 
-## 💭 Header objetivo x Header criado (Mobile):
-- ### Header objetivo:
-!['Foto do Header do objetivo - Mobile'](/src/assets/headerObjetivo-Mobile.png)
+## 💭 Seção de tarefas objetivo x criado (Mobile):
+- ### Seção de tarefas objetivo:
+!['Foto da Seção de tarefas do objetivo - Mobile'](/src/assets/taskSectionObjective-Mobile.png)
 
-- ### Header criado:
-!['Foto do meu Header - Mobile'](/src/assets/headerPessoal-Mobile.png)
+- ### Seção de tarefas criado:
+!['Foto da minha Seção de tarefas - Mobile'](/src/assets/taskSectionPersonal-Mobile.png)
 
 ##
-
-## Foto da documentação que busquei referente a configuração do ( newDate )
-!['Foto da documentação'](/src/assets/newDateConfig.png)
-- Link: 
-> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString" target="_blank">🔗 Clique aqui para ler a documentação</a>
 
 ## 📌 Sobre o case:
 Este projeto é um desafio proposto pela equipe da LegaPlan para uma vaga de dev Junior, os pontos levantados são:
@@ -34,25 +29,16 @@ Este projeto é um desafio proposto pela equipe da LegaPlan para uma vaga de dev
 
 ## Alterações na pasta: ( src )
 
-## Alterações nas pastas de ( src ): ( app / assets / components / hooks / styles )
+## Alterações nas pastas de ( src ): ( app / assets / components )
 
 ### app:
-- app > layout.tsx: Adicionado a importação da fonte: Inter_Tight.
-- app > page.tsx: Adicionado o componente Header.
+- app > page.tsx: Importado e adicionado o componente "Tasks" (Responsável por renderizar na tela todas as tarefas).
 
 ### assets:
-- assets: Adicionado as 5 fotos usadas neste readme e também adicionado a foto do Logo que fica no header.
+- assets: Adicionado as 4 fotos usadas neste readme e também adicionado a foto da lixeira que se encontra em cada tarefa no canto direito.
 
 ### components:
-- components: Criado a pasta components.
-- components > Header: Criado a pasta "Header" para guardar a estrutura do header junto da sua estilização em Scss. 
-
-### hooks:
-- hooks: Criado a pasta hooks.
-- hooks > Header: Pasta que guarda a parte lógica do Header, como a geração do dia atual e também o armazenamento e o get do nome do usuário no localStorage.
-
-### styles:
-- styles > GlobalStyles.scss: Adicionado o background-color do body.
+- components > Header: Criado a pasta "Tasks" para guardar a estrutura da seção de tarefas, e também criada a estilização em Scss. 
 
 ##
 
