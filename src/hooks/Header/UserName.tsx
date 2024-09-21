@@ -10,7 +10,11 @@ export default function UserName(): JSX.Element {
         if (nameLocalStorage) {
             setUserName(nameLocalStorage);
         } else {
-            const nameChoice: string | null = prompt(`Seja muito bem-vindo ao FocalPoint! \nPoderia nos informar como deseja ser chamado?`);
+            let nameChoice: string | null
+            do {
+                nameChoice = prompt(`Seja muito bem-vindo ao FocalPoint! \nPoderia nos informar como deseja ser chamado?`);
+            } while (nameChoice === null || nameChoice.trim() === "");
+            
             if (nameChoice) {
                 localStorage.setItem('userName', nameChoice);
                 setUserName(nameChoice);
