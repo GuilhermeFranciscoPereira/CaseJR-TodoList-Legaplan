@@ -1,7 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useContext, useState } from "react";
 
 type ModalNewTaskContextProps = {
     modalNewTask: boolean;
+    addSuccess: boolean;
+    setAddSuccess: Dispatch<SetStateAction<boolean>>;
     toSetModalNewTasks: () => void;
 }
 
@@ -9,13 +11,14 @@ const ModalNewTaskContext = createContext<ModalNewTaskContextProps>({} as ModalN
 
 const ModalNewTaskProvider = ({children}: {children: React.ReactNode}) => {
     const [modalNewTask, setModalNewTask] = useState<boolean>(false);
+    const [addSuccess, setAddSuccess] = useState<boolean>(false);
     
     function toSetModalNewTasks(): void {
         setModalNewTask(modalNewTask ? false : true);
     }
 
     return (
-        <ModalNewTaskContext.Provider value={{modalNewTask, toSetModalNewTasks}}>
+        <ModalNewTaskContext.Provider value={{modalNewTask, addSuccess, setAddSuccess, toSetModalNewTasks}}>
             {children}
         </ModalNewTaskContext.Provider>
     )

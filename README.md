@@ -1,22 +1,22 @@
 # 📝 Case Dev Junior - TodoList - Legaplan 📝
 
-> Commit: 20/09/2024 - 23:42 ( Commit de criação do modal de adicionar uma nova tarefa e também já está setando a nova tarefa no local storage )
+> Commit: 21/09/2024 - 01:09 ( Commit de criação do componente responsável por renderizar todas as tarefas na tela )
 
 #
 
-## 💭 modal do objetivo x criado (PC):
-- ### modal do objetivo:
-!['Foto do modal do objetivo - PC'](/src/assets/modalObjective-PC.png)
+## 💭 Site atual (PC):
+- ### Site atual sem tarefa:
+!['Foto do site sem tarefas - PC'](/src/assets/withoutTaskt-PC.png)
 
-- ### modal criado:
-!['Foto do meu modal - PC'](/src/assets/modalPersonal-PC.png)
+- ### Site atual com tarefas:
+!['Foto do site com tarefas - PC'](/src/assets/tasks-PC.png)
 
-## 💭 modal do objetivo x criado (Mobile):
-- ### modal do objetivo:
-!['Foto do modal do objetivo - Mobile'](/src/assets/modalObjective-Mobile.png)
+## 💭 Site atual - (Mobile):
+- ### Site atual sem tarefa:
+!['Foto do site sem tarefas - Mobile'](/src/assets/withoutTaskt-Mobile.png)
 
-- ### modal criado:
-!['Foto do meu modal - Mobile'](/src/assets/modalPersonal-Mobile.png)
+- ### Site atual com tarefas:
+!['Foto do site com tarefas- Mobile'](/src/assets/tasks-Mobile.png)
 
 ##
 
@@ -27,35 +27,22 @@ Este projeto é um desafio proposto pela equipe da LegaPlan para uma vaga de dev
 
 ## ✔️ Alterações deste commit:
 
-## Alterações na pasta: ( src / package.json )
+## Alterações na pasta: ( src )
 
-## Alterações nas pastas de ( src ): ( app / assets / components / contexts / hooks / services )
-
-### app:
-- app > layout.tsx: Adicionado as importações dos contexts e adicionado no layout.
+## Alterações nas pastas de ( src ): ( assets / components / contexts / hooks )
 
 ### assets:
 - assets: Adicionado as 4 fotos usadas neste readme para mostrar como o site está no momento atual.
 
 ### components:
-- components > Buttons > ButtonsToModal: Criado esta pasta para guardar o botão que vai ser utilizado pelos modais e para usar o 'use client' separado do arquivo principal.
-- components > Buttons > PrimaryButtons: Adicionado os novos parâmetros: textColor (opcional) e também onClick (função)
-- components > Modal > ModalNewTask: Criado a pasta para guardar toda a estrutura e estilização do modal de nova tarefa.
-- components > Tasks > index.tsx: Trocado o botão que estava por um que já se conecta com a parte lógica e evita adicionar o 'use client' diretamente no componente de Tasks.
+- components > Tasks > index.tsx: Importado e inserido o componente que renderiza as tarefas na tela para substituir as tarefas que haviam sido inseridas manualmente.
+- components > LocalStorage > ShowAllTasks.tsx: Criado toda a estrutura do componente que é responsável pela renderização das tarefas e adicionado ao componente de Tasks.
 
 ### contexts:
-- contexts > Modals: Criado está pasta para guardar todos os contextos referentes aos modais.
-- context > AppProvider.tsx: Arquivo único que faz todas as exportações de uma só vez.
+- contexts > Modals > ModalNewTaskContext.tsx: Adicionado 2 novas exportações para o contexto de modais de novas tarefas, para que usemos como controle de quando acontece uma troca das tarefas e assim fazer uma nova renderização na tela e sempre mostrar as novas tarefas.
 
 ### hooks:
-- hooks > LocalStorage > addNewTask.tsx: Criado o hook responsável por adicionar as tarefas ao localStorage.
-- hooks > Modal > hookModalNewTasks.tsx: Onde está toda a parte lógica do componente: "Modal > modalNewTask".
-
-### services:
-- services > QueryClient.tsx: Criado o queryClientProvider fora do layout para usar o 'use client' fora do layout e exportar de forma prática.
-
-## Alterações no aquivo ( package.json )
--  Instalado o React-Query.
+- hooks > LocalStorage > addNewTask.tsx: Adicionado as exportações comentadas no tópico a cima. E sempre que setar uma nova tarefa no local storage alterará o valor de "addSuccess" e irá forçar uma nova renderização na tela no arquivo "showAllTasks.tsx".
 
 ##
 
