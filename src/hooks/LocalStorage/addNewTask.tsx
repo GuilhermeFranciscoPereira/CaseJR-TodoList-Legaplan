@@ -10,7 +10,7 @@ export default function addNewTask(): addNewTaskProps {
     const {addSuccess, setAddSuccess} = useModalNewTaskContext();
 
     useEffect(() => {
-        const LocalStorage: string | null = localStorage.getItem('tasks');
+        const LocalStorage: string | null = localStorage.getItem('tasksToDo');
         if (LocalStorage) {
             const LocalStorageJsonParse: Array<string> = JSON.parse(LocalStorage);
             setCurrentTasks(LocalStorageJsonParse);
@@ -18,17 +18,22 @@ export default function addNewTask(): addNewTaskProps {
     }, []);
 
     function toAddNewTask(newTask: string): void {
+        const LocalStorageTaskToDo: string | null = localStorage.getItem('tasksToDo');
+        const LocalStorageJsonParseTaskToDo: Array<string> = LocalStorageTaskToDo && JSON.parse(LocalStorageTaskToDo.toLowerCase().trim().replace(/\s+/g, ''));
+        const LocalStorageDone: string | null = localStorage.getItem('tasksDone');
+        const LocalStorageJsonParseDone: Array<string> = LocalStorageDone && JSON.parse(LocalStorageDone.toLowerCase().trim().replace(/\s+/g, ''));
         if (newTask.length <= 0) {
             alert('Não é possível adicionar uma nova tarefa vazia. Por favor, digite algo antes.');
+        } else if(LocalStorageJsonParseTaskToDo.includes(newTask.toLowerCase().trim().replace(/\s+/g, '')) || LocalStorageJsonParseDone.includes(newTask.toLowerCase().trim().replace(/\s+/g, ''))) {
+            alert('Essa tarefa já existe, que tal criar uma nova? :)');
         } else {
             setCurrentTasks(tasks => [...tasks, newTask]);
-            localStorage.setItem('tasks', JSON.stringify(currentTasks));
         }
     }
 
     useEffect(() => {
         if(currentTasks.length > 0) {
-            localStorage.setItem('tasks', JSON.stringify(currentTasks));
+            localStorage.setItem('tasksToDo', JSON.stringify(currentTasks));
             setAddSuccess(addSuccess ? false : true);
         }
     }, [currentTasks]); 

@@ -1,22 +1,17 @@
 # 📝 Case Dev Junior - TodoList - Legaplan 📝
 
-> Commit: 21/09/2024 - 01:09 ( Commit de criação do componente responsável por renderizar todas as tarefas na tela )
+> Commit: 21/09/2024 - 12:50 ( Commit de criação da função de clicar na tarefa e trocar entre "Suas tarefas de hoje" e "Tarefas finalizadas" além de adicionar no local storage para cada )
 
 #
 
-## 💭 Site atual (PC):
-- ### Site atual sem tarefa:
-!['Foto do site sem tarefas - PC'](/src/assets/withoutTaskt-PC.png)
+## 💭 Como está o LocalStorage:
+!['Foto como está o LocalStorage'](/src/assets/localStorage.png)
 
-- ### Site atual com tarefas:
-!['Foto do site com tarefas - PC'](/src/assets/tasks-PC.png)
+## 💭 Site atual (PC):
+!['Foto do site sem tarefas - PC'](/src/assets/personalSite-PC.png)
 
 ## 💭 Site atual - (Mobile):
-- ### Site atual sem tarefa:
-!['Foto do site sem tarefas - Mobile'](/src/assets/withoutTaskt-Mobile.png)
-
-- ### Site atual com tarefas:
-!['Foto do site com tarefas- Mobile'](/src/assets/tasks-Mobile.png)
+!['Foto do site sem tarefas - Mobile'](/src/assets/personalSite-Mobile.png)
 
 ##
 
@@ -29,20 +24,23 @@ Este projeto é um desafio proposto pela equipe da LegaPlan para uma vaga de dev
 
 ## Alterações na pasta: ( src )
 
-## Alterações nas pastas de ( src ): ( assets / components / contexts / hooks )
+## Alterações nas pastas de ( src ): ( assets / components / hooks / styles )
 
 ### assets:
-- assets: Adicionado as 4 fotos usadas neste readme para mostrar como o site está no momento atual.
+- assets: Adicionado as 3 fotos usadas neste readme para mostrar como o site está no momento atual.
 
 ### components:
-- components > Tasks > index.tsx: Importado e inserido o componente que renderiza as tarefas na tela para substituir as tarefas que haviam sido inseridas manualmente.
-- components > LocalStorage > ShowAllTasks.tsx: Criado toda a estrutura do componente que é responsável pela renderização das tarefas e adicionado ao componente de Tasks.
-
-### contexts:
-- contexts > Modals > ModalNewTaskContext.tsx: Adicionado 2 novas exportações para o contexto de modais de novas tarefas, para que usemos como controle de quando acontece uma troca das tarefas e assim fazer uma nova renderização na tela e sempre mostrar as novas tarefas.
+- components > LocalStorage > ShowAllTasks.tsx: Apenas alterado a estrutura, trazendo todo o Section para o arquivo e fazendo um map para "Suas tarefas de hoje" e outro para "Tarefas finalizadas".
+- components > Modal > ModalNewTask > ModalNewTask.scss: Alterações apenas para o modal de adicionar uma nova tarefa ficar sempre centralizado no meio da tela.
+- components > Tasks > Index.tsx: Removido toda a estruturação anterior e fazendo a importação de "ShowAllTasks".
+- components > Tasks > Tasks.scss: Adição para a estilização do novo h1 que aparece caso não exista nenhuma tarefa e alterado o margin-top para o elemento pai.
 
 ### hooks:
-- hooks > LocalStorage > addNewTask.tsx: Adicionado as exportações comentadas no tópico a cima. E sempre que setar uma nova tarefa no local storage alterará o valor de "addSuccess" e irá forçar uma nova renderização na tela no arquivo "showAllTasks.tsx".
+- hooks > LocalStorage > addNewTask.tsx: Adicionado a validação para ver se já existe aquela tarefa que vai ser adicionada e alterado a chave do local Storage para a nova.
+- hooks > LocalStorage > hookShowAllTask.tsx: Toda a parte lógica do componente "ShowAllTasks".
+
+### styles:
+- styles > GlobalStyles.scss: Pequenas alterações no body. Alterando o height para não ser travado em 100vh e sim ter pelo menos 100vh, o width para 99vw e para o overflow ser apenas para o X ( Na horizontal ).
 
 ##
 

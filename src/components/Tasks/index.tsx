@@ -6,13 +6,7 @@ export default function Tasks(): JSX.Element {
     return (
         <>
         <main className='tasksMain'>
-            <section className='tasksSection'>
-                <div className='tasksToDo'>
-                    <ShowAllTasks></ShowAllTasks>
-                </div>
-                <div className='tasksDone'>
-                </div>
-            </section>
+            <ShowAllTasks></ShowAllTasks>
             <ButtonToModalNewTasks></ButtonToModalNewTasks>
         </main>
         </>
