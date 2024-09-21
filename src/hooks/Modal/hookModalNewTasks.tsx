@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { useModalNewTaskContext } from "@/contexts/Modals/ModalNewTaskContext";
-import addNewTask from "@/hooks/LocalStorage/addNewTask";
+import AddNewTask from "../LocalStorage/addNewTask";
 
 type hookModalNewTasksProps = {
     newTask: string;
@@ -10,8 +10,8 @@ type hookModalNewTasksProps = {
     keyDownListening: (event: {key: string; }) => void;
 }
 
-export default function hookModalNewTasks(): hookModalNewTasksProps {
-    const {toAddNewTask} = addNewTask();
+export default function HookModalNewTasks(): hookModalNewTasksProps {
+    const {toAddNewTask} = AddNewTask();
     const {toSetModalNewTasks} = useModalNewTaskContext();
     const [newTask, setNewTask] = useState<string>('');
 

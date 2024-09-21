@@ -4,7 +4,7 @@
     }
 }
 
-main.mainModalNewTask {
+main.mainModalDeleteTask {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@ main.mainModalNewTask {
     height: 100vh;
     background-color: #FFFFFFCC;
 
-    section.sectionModalNewTask {
+    section.sectionModalDeleteTask {
         display: flex;
         flex-direction: column;
         position: fixed;
@@ -40,30 +40,15 @@ main.mainModalNewTask {
             text-align: left;            
         }
 
-        label {
-            display: flex;
-            flex-direction: column;
+        p {
             font-size: 16px;
             font-weight: 400;
-            line-height: 19.36px;
+            line-height: 24px;
             letter-spacing: -0.02em;
-
-            input {
-                width: 386px;
-                height: 51px;
-                padding: 16px;
-                gap: 16px;
-                border-radius: 8px;
-                border: 1px solid #D7DDE9;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 19.36px;
-                letter-spacing: -0.02em;
-                text-align: left;
-            }
+            text-align: left;
         }
         
-        div.buttonsNewTask {
+        div.buttonsDeleteTask {
             display: flex;
             width: 386px;
             height: 51px;
@@ -78,12 +63,12 @@ main.mainModalNewTask {
 }
 
 @include maxWidth480px {
-    main.mainModalNewTask {
+    main.mainModalDeleteTask {
         position: fixed;
         top: 0;
         left: 0;
         
-        section.sectionModalNewTask {
+        section.sectionModalDeleteTask {
             display: flex;
             align-items: center;
             width: 100%;
@@ -95,16 +80,8 @@ main.mainModalNewTask {
                 text-align: left;
                 width: 272px;
             }
-
-            label { 
-                gap: 8px;
-                input {
-                    width: 272px;
-                    height: 51px;
-                }
-            }
             
-            div.buttonsNewTask {
+            div.buttonsDeleteTask {
                 flex-direction: column-reverse;
                 justify-content: center;
                 margin-top: 24px;

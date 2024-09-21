@@ -1,6 +1,6 @@
 # 📝 Case Dev Junior - TodoList - Legaplan 📝
 
-> Commit: 21/09/2024 - 12:50 ( Commit de criação da função de clicar na tarefa e trocar entre "Suas tarefas de hoje" e "Tarefas finalizadas" além de adicionar no local storage para cada )
+> Commit: 21/09/2024 - 15:17 ( Commit de criação do modal e da função de deletar. Assim, permitindo que o usuário delete qualquer tarefa que deseje )
 
 #
 
@@ -24,23 +24,21 @@ Este projeto é um desafio proposto pela equipe da LegaPlan para uma vaga de dev
 
 ## Alterações na pasta: ( src )
 
-## Alterações nas pastas de ( src ): ( assets / components / hooks / styles )
-
-### assets:
-- assets: Adicionado as 3 fotos usadas neste readme para mostrar como o site está no momento atual.
+## Alterações nas pastas de ( src ): ( components / contexts / hooks  )
 
 ### components:
-- components > LocalStorage > ShowAllTasks.tsx: Apenas alterado a estrutura, trazendo todo o Section para o arquivo e fazendo um map para "Suas tarefas de hoje" e outro para "Tarefas finalizadas".
-- components > Modal > ModalNewTask > ModalNewTask.scss: Alterações apenas para o modal de adicionar uma nova tarefa ficar sempre centralizado no meio da tela.
-- components > Tasks > Index.tsx: Removido toda a estruturação anterior e fazendo a importação de "ShowAllTasks".
-- components > Tasks > Tasks.scss: Adição para a estilização do novo h1 que aparece caso não exista nenhuma tarefa e alterado o margin-top para o elemento pai.
+- components > Button > ButtonsToModal > ButtonToModalDeleteTasks.tsx: Criado a exportação da imagem da lixeira como um botão que ao clicar aparece o modal de deletar a tarefa correspondente.
+- components > LocalStorage > ShowAllTasks.tsx: Excluído a imagem da lixeira e substituído pelo componente citado à cima.
+- components > Modal > ModalDeleteTask: Criado a estrutura e estilização do modal.
+- components > Modal > ModalNewTask > ModalNewTask.scss: Adicionado o "top: 0; left: 0" para ter a certeza que o modal irá ficar bem centralizado na tela.
+
+### contexts:
+- contexts > Modals > ModalDeleteTaskContext.tsx: Criado todo o contexto do modal de deletar, exportando com esse contexto tudo necessário para funcionar bem a função de deletar.
+- contexts > AppProvider.tsx: Importado o provider do "ModalDeleteTaskContext".
 
 ### hooks:
-- hooks > LocalStorage > addNewTask.tsx: Adicionado a validação para ver se já existe aquela tarefa que vai ser adicionada e alterado a chave do local Storage para a nova.
-- hooks > LocalStorage > hookShowAllTask.tsx: Toda a parte lógica do componente "ShowAllTasks".
-
-### styles:
-- styles > GlobalStyles.scss: Pequenas alterações no body. Alterando o height para não ser travado em 100vh e sim ter pelo menos 100vh, o width para 99vw e para o overflow ser apenas para o X ( Na horizontal ).
+- hooks > LocalStorage > hookShowAllTask.tsx: Implantada a função de abrir o modal de deletar e já seta também o nome do modal que foi clicado e qual o seu tipo.
+- hooks > Modal > hookModalDeleteTask.tsx: Criado a parte lógica do modal de deletar.
 
 ##
 

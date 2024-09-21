@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import { useModalNewTaskContext } from "@/contexts/Modals/ModalNewTaskContext";
+import { useModalDeleteTaskContext } from "@/contexts/Modals/ModalDeleteTaskContext";
 
 type hookShowAllTaskProps = {
     allTasks: Array<string>; 
     tasksToDo: Array<string>;
     tasksDone: Array<string>;
     handleMoveTask: (type: string, task: string) => void;
+    handleModalDelete: (type: string, task: string) => void;
 }
 
-export default function hookShowAllTask(): hookShowAllTaskProps {
+export default function HookShowAllTask(): hookShowAllTaskProps {
     const [allTasks, setAllTasks] = useState<Array<string>>([]);
     const [tasksToDo, setTasksToDo] = useState<Array<string>>([]);
     const [tasksDone, setTasksDone] = useState<Array<string>>([]);
     const {addSuccess} = useModalNewTaskContext();
+    const {toSetTaskNameAndType, toSetModalDeleteTasks} = useModalDeleteTaskContext();
 
     useEffect(() => {
         const allTasksTodo: string | null = localStorage.getItem('tasksToDo');
@@ -60,16 +63,16 @@ export default function hookShowAllTask(): hookShowAllTaskProps {
     }
 
     useEffect(() => {
-        if (tasksDone.length > 0) {
+        if (tasksDone.length > 0 || tasksToDo.length > 0) {
             localStorage.setItem('tasksDone', JSON.stringify(tasksDone));
-        }
-    }, [tasksDone]);
-
-    useEffect(() => {
-        if (tasksToDo.length > 0) {
             localStorage.setItem('tasksToDo', JSON.stringify(tasksToDo));
         }
-    }, [tasksToDo]);
+    }, [tasksDone, tasksToDo]);
 
-    return {allTasks, tasksToDo, tasksDone, handleMoveTask}
+    function handleModalDelete(type: string, task: string) {
+        toSetModalDeleteTasks();
+        toSetTaskNameAndType(type, task)
+    }
+
+    return {allTasks, tasksToDo, tasksDone, handleMoveTask, handleModalDelete}
 }

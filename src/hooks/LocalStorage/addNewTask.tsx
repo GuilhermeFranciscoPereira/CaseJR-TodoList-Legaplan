@@ -5,7 +5,7 @@ type addNewTaskProps = {
     toAddNewTask: (newTask: string) => void;
 }
 
-export default function addNewTask(): addNewTaskProps {
+export default function AddNewTask(): addNewTaskProps {
     const [currentTasks, setCurrentTasks] = useState<Array<string>>([]);
     const {addSuccess, setAddSuccess} = useModalNewTaskContext();
 

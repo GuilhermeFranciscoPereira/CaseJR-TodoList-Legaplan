@@ -1,10 +1,9 @@
 'use client'
-import hookShowAllTask from '@/hooks/LocalStorage/hookShowAllTask';
-import Image from 'next/image';
-import Trash from '../../assets/trash.png';
+import HookShowAllTask from '@/hooks/LocalStorage/hookShowAllTask';
+import ButtonToModalDeleteTasks from '../Buttons/ButtonsToModal/ButtonToModalDeleteTasks';
 
 export default function ShowAllTasks(): JSX.Element {
-    const {allTasks, tasksToDo, tasksDone, handleMoveTask} = hookShowAllTask();
+    const {allTasks, tasksToDo, tasksDone, handleMoveTask, handleModalDelete} = HookShowAllTask();
     return (
         <>
         {allTasks.length > 0 
@@ -20,7 +19,7 @@ export default function ShowAllTasks(): JSX.Element {
                                 <span className="checkboxSquare"></span>
                                 <p>{task}</p>
                             </label>
-                            <Image src={Trash} width={24} height={24} alt='Imagem de um lixinho para excluir as tarefas' quality={100}/>
+                            <ButtonToModalDeleteTasks onClick={() => handleModalDelete('taskToDo', task)}></ButtonToModalDeleteTasks>
                         </div>
                     ))}
                 </div>
@@ -33,7 +32,7 @@ export default function ShowAllTasks(): JSX.Element {
                                 <span className="checkboxSquare"></span>
                                 <p>{task}</p>
                             </label>
-                            <Image src={Trash} width={24} height={24} alt='Imagem de um lixinho para excluir as tarefas' quality={100}/>
+                            <ButtonToModalDeleteTasks onClick={() => handleModalDelete('taskDone', task)}></ButtonToModalDeleteTasks>
                         </div>
                     ))}
                 </div>

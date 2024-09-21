@@ -1,9 +1,9 @@
 import PrimaryButton from "@/components/Buttons/PrimaryButton";
-import hookModalNewTasks from "@/hooks/Modal/hookModalNewTasks";
+import HookModalNewTasks from "@/hooks/Modal/hookModalNewTasks";
 import './ModalNewTask.scss'
 
 export default function ModalNewTask(): JSX.Element {
-    const {newTask, setNewTask, keyDownListening, handleWithNewTask, toSetModalNewTasks} = hookModalNewTasks();
+    const {newTask, setNewTask, keyDownListening, handleWithNewTask, toSetModalNewTasks} = HookModalNewTasks();
     return (
         <main className="mainModalNewTask">
             <section className="sectionModalNewTask">
