@@ -3,12 +3,14 @@ import './PrimaryButton.scss';
 type ButtonProps = {
     children: React.ReactNode;
     firstColor: string;
-    secondColor: string,
+    secondColor: string;
+    textColor?: string;
+    onClick: () => void;
 }
 
-export default function PrimaryButton({children, firstColor, secondColor}: ButtonProps): JSX.Element {
+export default function PrimaryButton({children, firstColor, secondColor, textColor, onClick}: ButtonProps): JSX.Element {
     return (
-        <button style={{background: `linear-gradient(90deg, ${firstColor}, ${secondColor})`}}>
+        <button onClick={onClick} style={{background: `linear-gradient(90deg, ${firstColor}, ${secondColor})`, color: `${textColor}`}}>
             {children}
         </button>
     )

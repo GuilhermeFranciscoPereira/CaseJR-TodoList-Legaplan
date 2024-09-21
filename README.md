@@ -1,22 +1,22 @@
 # 📝 Case Dev Junior - TodoList - Legaplan 📝
 
-> Commit: 20/09/2024 - 15:53 ( Commit de criação do componente de botão que será reutilizado pelo código )
+> Commit: 20/09/2024 - 23:42 ( Commit de criação do modal de adicionar uma nova tarefa e também já está setando a nova tarefa no local storage )
 
 #
 
-## 💭 Botão do objetivo x criado (PC):
-- ### Botão do objetivo:
-!['Foto do botão do objetivo - PC'](/src/assets/taskSectionObjective-PC.png)
+## 💭 modal do objetivo x criado (PC):
+- ### modal do objetivo:
+!['Foto do modal do objetivo - PC'](/src/assets/modalObjective-PC.png)
 
-- ### Seção de tarefas criado:
-!['Foto do meu botão - PC'](/src/assets/taskSectionPersonal-PC.png)
+- ### modal criado:
+!['Foto do meu modal - PC'](/src/assets/modalPersonal-PC.png)
 
-## 💭 Botão do objetivo x criado (Mobile):
-- ### Botão do objetivo:
-!['Foto do botão do objetivo - Mobile'](/src/assets/taskSectionObjective-Mobile.png)
+## 💭 modal do objetivo x criado (Mobile):
+- ### modal do objetivo:
+!['Foto do modal do objetivo - Mobile'](/src/assets/modalObjective-Mobile.png)
 
-- ### Seção de tarefas criado:
-!['Foto do meu botão - Mobile'](/src/assets/taskSectionPersonal-Mobile.png)
+- ### modal criado:
+!['Foto do meu modal - Mobile'](/src/assets/modalPersonal-Mobile.png)
 
 ##
 
@@ -27,17 +27,35 @@ Este projeto é um desafio proposto pela equipe da LegaPlan para uma vaga de dev
 
 ## ✔️ Alterações deste commit:
 
-## Alterações na pasta: ( src )
+## Alterações na pasta: ( src / package.json )
 
-## Alterações nas pastas de ( src ): ( assets / components )
+## Alterações nas pastas de ( src ): ( app / assets / components / contexts / hooks / services )
+
+### app:
+- app > layout.tsx: Adicionado as importações dos contexts e adicionado no layout.
 
 ### assets:
 - assets: Adicionado as 4 fotos usadas neste readme para mostrar como o site está no momento atual.
 
 ### components:
-- components > Buttons: Criado a pasta "Buttons" para guardar o botão que vai ser reutilizado no site.
-- components > Buttons > PrimaryButton: Criado a estrutura do botão para ser reutilizado no código, além da sua estilização padrão com scss.
-- components > Tasks: Adicionado o botão "Adicionar nova tarefa" a baixo do componente das tarefas e também adicionado a estilização particular deste botão no scss, como a largura, a altura e o margin-top.
+- components > Buttons > ButtonsToModal: Criado esta pasta para guardar o botão que vai ser utilizado pelos modais e para usar o 'use client' separado do arquivo principal.
+- components > Buttons > PrimaryButtons: Adicionado os novos parâmetros: textColor (opcional) e também onClick (função)
+- components > Modal > ModalNewTask: Criado a pasta para guardar toda a estrutura e estilização do modal de nova tarefa.
+- components > Tasks > index.tsx: Trocado o botão que estava por um que já se conecta com a parte lógica e evita adicionar o 'use client' diretamente no componente de Tasks.
+
+### contexts:
+- contexts > Modals: Criado está pasta para guardar todos os contextos referentes aos modais.
+- context > AppProvider.tsx: Arquivo único que faz todas as exportações de uma só vez.
+
+### hooks:
+- hooks > LocalStorage > addNewTask.tsx: Criado o hook responsável por adicionar as tarefas ao localStorage.
+- hooks > Modal > hookModalNewTasks.tsx: Onde está toda a parte lógica do componente: "Modal > modalNewTask".
+
+### services:
+- services > QueryClient.tsx: Criado o queryClientProvider fora do layout para usar o 'use client' fora do layout e exportar de forma prática.
+
+## Alterações no aquivo ( package.json )
+-  Instalado o React-Query.
 
 ##
 
